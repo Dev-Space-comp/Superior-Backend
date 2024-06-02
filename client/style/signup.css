@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+main {
+    width: 90%;
+    height: 80%;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+}
+#form{
+    width: 70%;
+    height: 100%;
+    float: left;
+    align-items:center;
+}
+#rocket{
+    width: 30%;
+    height: 100%;
+    background-color:blue;
+    float: right;
+}
+
+form * {
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+}
+#firstname {
+    width: 40%;
+}
+
+#lastname {
+    width: 40%;
+    float: right;
+}
+
+#email{
+    width: 95%;
+}
+
+#pass {
+    width: 95%;
+
+}
+
+#submit{
+    align-self: center;
+}
