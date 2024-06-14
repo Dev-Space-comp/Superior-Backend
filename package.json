@@ -3,8 +3,7 @@
   "module": "./src/index.ts",
   "type": "module",
   "devDependencies": {
-    "@types/bun": "latest",
-    "@vitejs/plugin-legacy": "^5.4.1"
+    "@types/bun": "latest"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
@@ -15,5 +14,8 @@
   },
   "scripts": {
     "dev": "bun run --hot ./src/index.ts"
-  }
+  },
+  "trustedDependencies": [
+    "core-js"
+  ]
 }
