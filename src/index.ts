@@ -22,13 +22,27 @@ app.get('/', (c) => c.text('Hello Bun!'))
 
 app.post('/', async (c) => {
   const body = await c.req.json();
-  const { firstName ,lastName, email, pass, pass_check } = body;
+  const { firstName ,lastName, email, pass } = body;
   const user = db.query(`
     INSERT INTO users (name, email, password)
     VALUES (?, ?, ?)
   `);
-  user.run(firstName + lastName, email, pass);
+  user.run(firstName + lastName, email, Bun.password.hashSync(pass))
   return c.json({ firstName, lastName, email, pass });
+})
+
+app.post('/login', async (c) => {
+  const body = await c.req.json();
+  const { email, pass } = body;
+  const user = db.query(`
+    SELECT * FROM users WHERE email = ? AND password = ?
+  `);
+  
+  if(user.get(email, Bun.password.hashSync(pass)) == null) {
+    return c.json({"userexists":false})
+  }else { 
+    return c.json({"userexists":true})
+  }
 })
 
 const port = process.env.PORT || 3000;

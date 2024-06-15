@@ -10,6 +10,11 @@ yarn-error.log*
 lerna-debug.log*
 .pnpm-debug.log*
 
+mydb.sqlite
+mydb.sqlite-shm
+mydb.sqlite-wal
+
+
 # Caches
 
 .cache
@@ -55,6 +60,8 @@ bower_components
 build/Release
 
 # Dependency directories
+
+
 
 node_modules/
 jspm_packages/
